@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4122AA311786F66F0096C2A8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4122AA301786F66F0096C2A8 /* main.cpp */; };
-		4122AA331786F66F0096C2A8 /* NTFSTypeFixer.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4122AA321786F66F0096C2A8 /* NTFSTypeFixer.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +17,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				4122AA331786F66F0096C2A8 /* NTFSTypeFixer.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -27,7 +25,6 @@
 /* Begin PBXFileReference section */
 		4122AA2D1786F66F0096C2A8 /* NTFSTypeFixer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NTFSTypeFixer; sourceTree = BUILT_PRODUCTS_DIR; };
 		4122AA301786F66F0096C2A8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		4122AA321786F66F0096C2A8 /* NTFSTypeFixer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = NTFSTypeFixer.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +41,7 @@
 		4122AA241786F66F0096C2A8 = {
 			isa = PBXGroup;
 			children = (
+				4122AA391786F67E0096C2A8 /* lib */,
 				4122AA2F1786F66F0096C2A8 /* NTFSTypeFixer */,
 				4122AA2E1786F66F0096C2A8 /* Products */,
 			);
@@ -61,9 +59,15 @@
 			isa = PBXGroup;
 			children = (
 				4122AA301786F66F0096C2A8 /* main.cpp */,
-				4122AA321786F66F0096C2A8 /* NTFSTypeFixer.1 */,
 			);
 			path = NTFSTypeFixer;
+			sourceTree = "<group>";
+		};
+		4122AA391786F67E0096C2A8 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
