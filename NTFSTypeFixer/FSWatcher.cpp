@@ -35,7 +35,7 @@ static void FsEventCallback(ConstFSEventStreamRef streamRef,
     for(int i = 0; i < numEvents; i++)
     {
         const char *szPath = szPaths[i];
-        printf("Path %s\n", szPath);
+        //printf("Path %s\n", szPath);
         
         LockFileQueue();
         
