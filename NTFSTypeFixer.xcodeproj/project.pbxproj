@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4122AA311786F66F0096C2A8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4122AA301786F66F0096C2A8 /* main.cpp */; };
+		4122AA3B1786F71F0096C2A8 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4122AA3A1786F71F0096C2A8 /* CoreServices.framework */; };
+		4122AA3E1786FB050096C2A8 /* FSWatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4122AA3C1786FB050096C2A8 /* FSWatcher.cpp */; };
+		4122AA411786FE260096C2A8 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4122AA3F1786FE260096C2A8 /* Util.cpp */; };
+		4122AA431786FEFD0096C2A8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4122AA421786FEFD0096C2A8 /* CoreFoundation.framework */; };
+		4122AA46178701A20096C2A8 /* FileQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4122AA44178701A20096C2A8 /* FileQueue.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,14 @@
 /* Begin PBXFileReference section */
 		4122AA2D1786F66F0096C2A8 /* NTFSTypeFixer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NTFSTypeFixer; sourceTree = BUILT_PRODUCTS_DIR; };
 		4122AA301786F66F0096C2A8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4122AA3A1786F71F0096C2A8 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		4122AA3C1786FB050096C2A8 /* FSWatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FSWatcher.cpp; sourceTree = "<group>"; };
+		4122AA3D1786FB050096C2A8 /* FSWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSWatcher.h; sourceTree = "<group>"; };
+		4122AA3F1786FE260096C2A8 /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
+		4122AA401786FE260096C2A8 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		4122AA421786FEFD0096C2A8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		4122AA44178701A20096C2A8 /* FileQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileQueue.cpp; sourceTree = "<group>"; };
+		4122AA45178701A20096C2A8 /* FileQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileQueue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4122AA431786FEFD0096C2A8 /* CoreFoundation.framework in Frameworks */,
+				4122AA3B1786F71F0096C2A8 /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +73,12 @@
 		4122AA2F1786F66F0096C2A8 /* NTFSTypeFixer */ = {
 			isa = PBXGroup;
 			children = (
+				4122AA3D1786FB050096C2A8 /* FSWatcher.h */,
+				4122AA3C1786FB050096C2A8 /* FSWatcher.cpp */,
+				4122AA45178701A20096C2A8 /* FileQueue.h */,
+				4122AA44178701A20096C2A8 /* FileQueue.cpp */,
+				4122AA401786FE260096C2A8 /* Util.h */,
+				4122AA3F1786FE260096C2A8 /* Util.cpp */,
 				4122AA301786F66F0096C2A8 /* main.cpp */,
 			);
 			path = NTFSTypeFixer;
@@ -66,6 +87,8 @@
 		4122AA391786F67E0096C2A8 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				4122AA421786FEFD0096C2A8 /* CoreFoundation.framework */,
+				4122AA3A1786F71F0096C2A8 /* CoreServices.framework */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -122,6 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4122AA311786F66F0096C2A8 /* main.cpp in Sources */,
+				4122AA3E1786FB050096C2A8 /* FSWatcher.cpp in Sources */,
+				4122AA411786FE260096C2A8 /* Util.cpp in Sources */,
+				4122AA46178701A20096C2A8 /* FileQueue.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +216,7 @@
 		4122AA371786F66F0096C2A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -197,6 +224,7 @@
 		4122AA381786F66F0096C2A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

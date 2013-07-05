@@ -3,16 +3,26 @@
 //  NTFSTypeFixer
 //
 //  Created by Sun Junwen on 13-7-5.
-//  Copyright (c) 2013年 Sun Junwen. All rights reserved.
+//  Copyright (c) 2013 Sun Junwen. All rights reserved.
 //
 
-#include <iostream>
+#include <string>
+
+#include "FSWatcher.h"
+
+using namespace std;
 
 int main(int argc, const char * argv[])
 {
-
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    string strPath("/Volumes/Windows/");
+    
+    StartFsEvent(strPath);
+    
+    // Start fix thread.
+    
+    
+    EndFsEvent();
+    
     return 0;
 }
 
