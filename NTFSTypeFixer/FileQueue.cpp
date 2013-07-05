@@ -16,11 +16,8 @@
 #include <sys/stat.h>
 #include <string>
 #include <list>
-#include <set>
 
 using namespace std;
-
-typedef set<string> StrSet;
 
 static StrList s_fileList;
 static pthread_mutex_t s_mtxList = PTHREAD_MUTEX_INITIALIZER;
@@ -51,11 +48,10 @@ string PopFile()
     return ret;
 }
 
-StrList::iterator FileQueueBegin()
-{
-    return s_fileList.begin();
-}
-
+/*
+ Must LockFileQueue() first,
+ and UnlockFileQueue() after finished opertion.
+ */
 StrList::iterator InsertFile(const string& strFilePath)
 {
     return InsertFile(strFilePath, s_fileList.begin());
@@ -71,10 +67,18 @@ StrList::iterator InsertFile(const string& strFilePath,
     return s_fileList.insert(itrWhere, strFilePath);
 }
 
+/*
+ Must LockFileQueue() first,
+ and UnlockFileQueue() after finished opertion.
+ */
 StrList::iterator InsertDir(const string& strDirPath,
-                            bool fAddSubDir)
+                            bool fInsertFront, bool fAddSubDir)
 {
-    StrList::iterator itrFile = FileQueueBegin();
+    StrList::iterator itrFile;
+    if(fInsertFront)
+        itrFile = s_fileList.begin();
+    else
+        itrFile = --s_fileList.end();
     
     DIR *pDir;
     struct dirent *pDirent;
@@ -86,15 +90,21 @@ StrList::iterator InsertDir(const string& strDirPath,
         while((pDirent = readdir(pDir)) != NULL)
         {
             string strPath(pDirent->d_name);
-            if(strPath != "." && strPath != ".." &&
-               strPath != ".DS_Store" && strPath != ".Trashes" &&
-               strPath != ".TemporaryItems")
+            if(strPath != "." && strPath != "..")
             {
-                strPath = strDirPath + strPath;
+                if(strDirPath[strDirPath.length() - 1] == '/')
+                    strPath = strDirPath + strPath;
+                else
+                    strPath = strDirPath + "/" + strPath;
+                
+                if(strPath.find(".DS_Store") != string::npos ||
+                   strPath.find(".Trashes") != string::npos ||
+                   strPath.find(".TemporaryItems") != string::npos)
+                    continue;
+                
                 stat(strPath.c_str(), &fileStat);
-                if(fileStat.st_mode & S_IFREG)
-                    itrFile = InsertFile(strPath, itrFile);
-                else if((fileStat.st_mode & S_IFDIR) && fAddSubDir)
+                if((fileStat.st_mode & S_IFREG) ||
+                   ((fileStat.st_mode & S_IFDIR) && fAddSubDir))
                     itrFile = InsertFile(strPath, itrFile);
             }
         }

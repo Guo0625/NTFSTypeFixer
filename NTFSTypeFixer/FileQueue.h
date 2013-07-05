@@ -20,13 +20,19 @@ void UnlockFileQueue();
 
 std::string PopFile();
 
-StrList::iterator FileQueueBegin();
-
+/*
+ Must LockFileQueue() first,
+ and UnlockFileQueue() after finished opertion.
+ */
 StrList::iterator InsertFile(const std::string& strFilePath);
 StrList::iterator InsertFile(const std::string& strFilePath,
                              StrList::const_iterator itrWhere);
 
 StrList::iterator InsertDir(const std::string& strDirPath,
-                            bool fAddSubDir);
+                            bool fInsertFront, bool fAddSubDir);
+/*
+ Must LockFileQueue() first,
+ and UnlockFileQueue() after finished opertion.
+ */
 
 #endif /* defined(_FILE_QUEUE_H_) */

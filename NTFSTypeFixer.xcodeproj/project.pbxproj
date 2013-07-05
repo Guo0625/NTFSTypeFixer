@@ -13,6 +13,7 @@
 		4122AA411786FE260096C2A8 /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4122AA3F1786FE260096C2A8 /* Util.cpp */; };
 		4122AA431786FEFD0096C2A8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4122AA421786FEFD0096C2A8 /* CoreFoundation.framework */; };
 		4122AA46178701A20096C2A8 /* FileQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4122AA44178701A20096C2A8 /* FileQueue.cpp */; };
+		4122AA491787134B0096C2A8 /* TypeFixer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4122AA471787134B0096C2A8 /* TypeFixer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,8 @@
 		4122AA421786FEFD0096C2A8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		4122AA44178701A20096C2A8 /* FileQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileQueue.cpp; sourceTree = "<group>"; };
 		4122AA45178701A20096C2A8 /* FileQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileQueue.h; sourceTree = "<group>"; };
+		4122AA471787134B0096C2A8 /* TypeFixer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TypeFixer.cpp; sourceTree = "<group>"; };
+		4122AA481787134B0096C2A8 /* TypeFixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeFixer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 			children = (
 				4122AA3D1786FB050096C2A8 /* FSWatcher.h */,
 				4122AA3C1786FB050096C2A8 /* FSWatcher.cpp */,
+				4122AA481787134B0096C2A8 /* TypeFixer.h */,
+				4122AA471787134B0096C2A8 /* TypeFixer.cpp */,
 				4122AA45178701A20096C2A8 /* FileQueue.h */,
 				4122AA44178701A20096C2A8 /* FileQueue.cpp */,
 				4122AA401786FE260096C2A8 /* Util.h */,
@@ -148,6 +153,7 @@
 				4122AA3E1786FB050096C2A8 /* FSWatcher.cpp in Sources */,
 				4122AA411786FE260096C2A8 /* Util.cpp in Sources */,
 				4122AA46178701A20096C2A8 /* FileQueue.cpp in Sources */,
+				4122AA491787134B0096C2A8 /* TypeFixer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

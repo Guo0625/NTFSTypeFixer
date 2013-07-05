@@ -9,6 +9,7 @@
 #include <string>
 
 #include "FSWatcher.h"
+#include "TypeFixer.h"
 
 using namespace std;
 
@@ -16,10 +17,9 @@ int main(int argc, const char * argv[])
 {
     string strPath("/Volumes/Windows/");
     
+    StartFixThread();
+    
     StartFsEvent(strPath);
-    
-    // Start fix thread.
-    
     
     EndFsEvent();
     

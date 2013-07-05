@@ -44,7 +44,7 @@ static void FsEventCallback(ConstFSEventStreamRef streamRef,
             if(fileStat.st_mode & S_IFREG)
                 InsertFile(szPath); // a file
             else if(fileStat.st_mode & S_IFDIR)
-                InsertDir(szPath, true); // a directory
+                InsertDir(szPath, true, true); // a directory
         }
         
         UnlockFileQueue();
